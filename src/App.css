@@ -18,8 +18,8 @@
 }
 
 /* ------------------------- */
-/*      CUSTOM PROPERTIES     */
-/* -------------------------- */
+/*        GENERAL RESET      */
+/* ------------------------- */
 
 *,
 *::after,
@@ -53,8 +53,8 @@ p {
 body {
   font-family: var(--ff-serif);
   font-size: var(--fs-400);
-  color: #ffff;
-  background-color: #333;
+  color: #333;
+  background-color: #ced8ff;
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -82,4 +82,23 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ------------------------- */
+/*       UTILITY CLASSES     */
+/* ------------------------- */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid {
+  display: flex;
+  gap: var(--gap, 1rem);
 }

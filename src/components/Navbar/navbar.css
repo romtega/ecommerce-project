@@ -1,0 +1,33 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  padding: 0 var(--fs-600);
+  background-color: #fff;
+}
+
+.logo {
+  /* flex-basis: 33.33%; */
+  width: 30px;
+  height: 30px;
+}
+ul {
+  /* flex-basis: 33.33%; */
+  list-style: none;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.search-box {
+  /* flex-basis: 33.33%; */
+  border-radius: 100vh;
+  padding: 10px 20px;
+  background-color: #ced8ff;
+}
+
+.search-box input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
