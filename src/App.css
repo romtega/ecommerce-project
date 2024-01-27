@@ -99,6 +99,6 @@ select {
 }
 
 .grid {
-  display: flex;
+  display: grid;
   gap: var(--gap, 1rem);
 }
