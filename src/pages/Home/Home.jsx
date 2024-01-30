@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Navbar from "../../components/Navbar/";
-import LoginForm from "../../components/LoginForm/";
+import Navbar from "@/components/Navbar/";
+import LoginForm from "@/components/LoginForm/";
 import "./home.css";
 
 const Home = () => {

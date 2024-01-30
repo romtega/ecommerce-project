@@ -1,4 +1,4 @@
-import prueba from "../../assets/prueba.svg";
+import prueba from "@/assets/prueba.svg";
 import "./navbar.css";
 
 const Navbar = ({ darkMode, setDarkMode }) => {
