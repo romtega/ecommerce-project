@@ -2,7 +2,29 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  position: fixed;
   z-index: 1;
   transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+}
+.header {
+  /* display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 5rem; */
+}
+
+.text {
+  color: hsl(var(--clr-dark));
+  font-size: var(--fs-600);
+}
+
+.underline {
+  width: 61px;
+  height: 6px;
+  background: hsl(var(--clr-dark));
+}
+
+.container form {
 }

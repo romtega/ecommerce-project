@@ -3,6 +3,11 @@
 /* ------------------------- */
 
 :root {
+  --crl-dark-bold: 191, 70%, 12%;
+  --clr-dark: 192, 71%, 23%;
+  --clr-light: 193, 23%, 92%;
+  --clr-white: 0, 0%, 100%;
+
   --fs-200: 0.875rem;
   --fs-300: 1rem;
   --fs-400: 1.125rem;
@@ -54,7 +59,6 @@ body {
   font-family: var(--ff-serif);
   font-size: var(--fs-400);
   color: #333;
-  background-color: #ced8ff;
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -101,4 +105,32 @@ select {
 .grid {
   display: grid;
   gap: var(--gap, 1rem);
+}
+
+/* colors */
+.bg-dark-bold {
+  background-color: hsl(var(--crl-dark-bold));
+}
+.bg-dark {
+  background-color: hsl(var(--clr-dark));
+}
+
+.bg-accent {
+  background-color: hsl(var(--clr-light));
+}
+
+.bg-white {
+  background-color: hsl(var(--clr-white));
+}
+
+.text-dark {
+  color: hsl(var(--clr-dark));
+}
+
+.text-accent {
+  color: hsl(var(--clr-light));
+}
+
+.text-white {
+  color: hsl(var(--clr-white));
 }

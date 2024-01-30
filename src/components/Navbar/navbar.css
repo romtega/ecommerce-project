@@ -4,7 +4,6 @@
   top: 0;
   z-index: 1;
   padding: 0 var(--fs-600);
-  background-color: #fff;
 }
 
 .logo {
@@ -23,11 +22,23 @@ ul {
   /* flex-basis: 33.33%; */
   border-radius: 100vh;
   padding: 10px 20px;
-  background-color: #ced8ff;
+  background-color: hsl(var(--clr-white));
+  transition: all 3s;
+}
+
+.search-box:hover,
+.search-box:active {
+  background-color: hsl(var(--clr-light));
 }
 
 .search-box input {
   outline: none;
   border: none;
   background-color: transparent;
+  height: 100%;
+}
+
+.search-box img {
+  width: 20px;
+  height: 20px;
 }

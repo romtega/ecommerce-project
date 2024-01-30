@@ -8,24 +8,46 @@ const LoginForm = () => {
     watch,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => console.log(data);
 
-  console.log(watch("example")); // watch input value by passing the name of it
-
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          placeholder="Usuario"
-          {...register("example", { required: true })}
-        />
-        <input
-          placeholder="Contraseña"
-          {...register("example", { required: true })}
-        />
-        <input type="submit" />
-      </form>
-    </div>
+    <>
+      <div className="container">
+        <div className="header">
+          <div className="title">Bienvenido!</div>
+          <div className="underline"></div>
+        </div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="inputs">
+            <label htmlFor="username">Usuario</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Ingresa tu usuario"
+              {...register("username", {
+                required: "Ingresa un usuario valido",
+              })}
+            />
+            {errors.username && <p>{errors.username.message}</p>}
+          </div>
+          <div className="inputs">
+            <label htmlFor="password">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Ingresa tu contraseña"
+              {...register("password", {
+                required: "Ingresa una contraseña valida",
+              })}
+            />
+            {errors.password && <p>{errors.password.message}</p>}
+          </div>
+          <input type="submit" value="Iniciar Sesión" />
+        </form>
+        <a href="">No tienes cuenta? Registrate!</a>
+      </div>
+    </>
   );
 };
 
