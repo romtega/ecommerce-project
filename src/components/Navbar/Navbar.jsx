@@ -1,20 +1,15 @@
 import SearchIcon from "@/assets/search-icon.svg";
-import ShoppingcartIcon from "@/assets/shopping-cart-icon.svg";
+import ShoppingCartIcon from "@/assets/shopping-cart-icon.svg";
 import HeartIcon from "@/assets/hearticon.svg";
 import HelpIcon from "@/assets/helpicon.svg";
 import "./navbar.css";
 
-const Navbar = ({ darkMode, setDarkMode }) => {
-  const toggle_mode = () => {
-    darkMode ? setDarkMode(false) : setDarkMode(true);
-  };
-
+const Navbar = () => {
   return (
     <div className="navbar flex flex-center bg-dark text-accent">
-      <img src={ShoppingcartIcon} alt="" className="logo" />
+      <img src={ShoppingCartIcon} alt="" className="logo" />
       <ul className="flex flex-center">
         <li>Categorias</li>
-
         <li>Ingresa a tu cuenta</li>
         <li>
           <a href="">
@@ -25,7 +20,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
       <ul className="flex flex-center">
         <li>
           <a href="">
-            <img src={ShoppingcartIcon} alt="" className="logo" />
+            <img src={ShoppingCartIcon} alt="" className="logo" />
           </a>
         </li>
         <li>
@@ -36,14 +31,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         <li>
           <div className="search-box flex flex-center">
             <input type="text" placeholder="Busca un producto" />
-            <img
-              onClick={() => {
-                toggle_mode();
-              }}
-              src={darkMode == true ? SearchIcon : console.log("funciona")}
-              alt=""
-              className="toggle-icon"
-            />
+            <img src={SearchIcon} alt="Search Icon" className="icon" />
           </div>
         </li>
       </ul>

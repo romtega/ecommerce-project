@@ -1,9 +1,7 @@
 import { useForm } from "react-hook-form";
-import UserIcon from "@/assets/usericon.svg";
-import KeyIcon from "@/assets/keyicon.svg";
 import "./signupform.css";
 
-const LoginForm = () => {
+const SignupForm = () => {
   const {
     register,
     handleSubmit,
@@ -30,7 +28,7 @@ const LoginForm = () => {
             id="firstName"
             placeholder="¿Cual es tu nombre?"
             {...register("firstName", {
-              required: "Please enter your first name",
+              required: "No me ignores! 🥲",
             })}
           />
           {errors.firstName && (
@@ -45,7 +43,7 @@ const LoginForm = () => {
             id="lastName"
             placeholder="¿Cual es tu apellido?"
             {...register("lastName", {
-              required: "Please enter your last name",
+              required: "No me ignores! 🥲",
             })}
           />
           {errors.lastName && (
@@ -60,7 +58,7 @@ const LoginForm = () => {
             id="age"
             placeholder="Pon tu edad"
             {...register("age", {
-              required: "Please enter your age",
+              required: "No me ignores! 🥲",
             })}
           />
           {errors.age && (
@@ -73,7 +71,7 @@ const LoginForm = () => {
             className="signup-form__input"
             id="genre"
             {...register("genre", {
-              required: "Please select your genre",
+              required: "No me ignores! 🥲",
             })}
           >
             <option value="">Selecciona tu genero</option>
@@ -113,4 +111,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SignupForm;
