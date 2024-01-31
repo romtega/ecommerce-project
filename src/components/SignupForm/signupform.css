@@ -1,4 +1,4 @@
-.login-form {
+.signup-form {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -9,35 +9,35 @@
   border-radius: 15px;
 }
 
-.login-form__title {
+.signup-form__title {
   color: hsl(var(--clr-dark));
   font-size: var(--fs-700);
   margin-bottom: -15px;
 }
 
-.login-form__underline {
+.signup-form__underline {
   width: 75%;
   height: 3px;
   background: hsl(var(--clr-dark));
 }
 
-.login-form__form {
+.signup-form__form {
   margin: 20px 0;
 }
 
-.login-form__icon {
+.signup-form__icon {
   height: 25px;
   width: 25px;
 }
 
-.login-form__input {
+.signup-form__input {
   height: 2.6rem;
   border: 2px solid hsl(var(--clr-white));
 }
 
-.login-form__submit,
-.login-form__submit:link,
-.login-form__submit:visited {
+.signup-form__submit,
+.signup-form__submit:link,
+.signup-form__submit:visited {
   background-color: hsl(var(--clr-dark));
   color: hsl(var(--clr-white));
   padding: 0.4rem 0.8rem;
@@ -48,14 +48,14 @@
   margin-top: 1rem;
 }
 
-.login-form__link:link,
-.login-form__link:visited {
+.signup-form__link:link,
+.signup-form__link:visited {
   color: hsl(var(--clr-dark));
   text-decoration: none;
   transition: all 0.3s;
 }
 
-.login-form__link:hover,
-.login-form__link:active {
+.signup-form__link:hover,
+.signup-form__link:active {
   text-decoration: underline;
 }
