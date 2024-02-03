@@ -3,47 +3,34 @@ import Navbar from "@/components/Navbar/";
 import LoginForm from "@/components/LoginForm/";
 import SignupForm from "@/components/SignupForm/";
 import "./home.css";
+import ItemsDashboard from "@/components/ItemsDashboard/";
 
 const Home = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const BASE_URL = "https://ecommerce-json-jwt.onrender.com";
+  const fetchItemsData = async () => {
+    try {
+      const response = await fetch(`${BASE_URL}/items`);
+      const data = await response.json();
+      setItems(data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setLoading(false);
+    }
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://ecommerce-json-jwt.onrender.com/items"
-        );
-        const data = await response.json();
-        setItems(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
+    fetchItemsData();
   }, []);
 
   return (
     <>
       <Navbar />
-      <LoginForm />
-      <SignupForm />
-
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <div>
-          <h2>Product List</h2>
-          <ul>
-            {items.map((item) => (
-              <li key={item.id}>{item.product_name}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {/* <LoginForm />
+      <SignupForm /> */}
+      <ItemsDashboard items={items} loading={loading} />
     </>
   );
 };
