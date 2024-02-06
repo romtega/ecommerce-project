@@ -12,12 +12,12 @@ const Home = () => {
   const BASE_URL = "https://ecommerce-json-jwt.onrender.com";
   const fetchItemsData = async () => {
     try {
-      const response = await fetch(`${BASE_URL}/items`);
-      const data = await response.json();
+      const res = await fetch(`${BASE_URL}/items`);
+      const data = await res.json();
       setItems(data);
       setLoading(false);
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error al recuperar datos:", error);
       setLoading(false);
     }
   };

@@ -60,7 +60,7 @@ p {
 }
 
 body {
-  font-family: var(--ff-serif);
+  font-family: var(--ff-sans-normal);
   font-size: var(--fs-400);
   color: #333;
   line-height: 1.5;
@@ -70,6 +70,7 @@ body {
 img,
 picture {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -103,7 +104,7 @@ select {
 
 .flex-center {
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .grid {
@@ -115,8 +116,25 @@ select {
   place-items: center;
 }
 
+.d-block {
+  display: block;
+}
+
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
+}
+
+.container {
+  padding-inline: 2rem;
+  margin-inline: auto;
+  /* max-width: 80rem; */
+}
+
+.grid-container {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding-inline: 1rem;
 }
 
 /* colors */

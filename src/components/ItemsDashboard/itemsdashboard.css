@@ -1,0 +1,25 @@
+.items-dashboard {
+  margin-top: 5.125rem;
+}
+
+.items-dashboard-title {
+  text-align: center;
+  padding: 2rem;
+}
+.items-gallery {
+  grid-template-columns: repeat(auto-fill, 20rem);
+  grid-auto-rows: 30rem;
+  justify-content: center;
+}
+
+.item-card {
+  --gap: 0;
+}
+
+.item-image {
+  border-radius: 2rem;
+}
+
+.item-price {
+  margin: 1rem;
+}
