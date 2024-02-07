@@ -3,9 +3,10 @@
 /* ------------------------- */
 
 :root {
-  --crl-dark-bold: 191, 70%, 12%;
-  --clr-dark: 192, 71%, 23%;
-  --clr-light: 193, 23%, 92%;
+  --clr-warning: 43.76, 100%, 50%;
+  --clr-accent: 32, 43.57%, 52.75%;
+  --clr-dark: 163.4, 66.2%, 13.92%;
+  --clr-light: 128.57, 16.8%, 50.98%;
   --clr-white: 0, 0%, 100%;
 
   --fs-200: 0.875rem;
@@ -62,9 +63,9 @@ p {
 body {
   font-family: var(--ff-sans-normal);
   font-size: var(--fs-400);
-  color: #333;
+  color: var(--clr-dark);
   line-height: 1.5;
-  max-height: 100vh;
+  min-height: 100vh;
 }
 
 img,
@@ -104,7 +105,6 @@ select {
 
 .flex-center {
   align-items: center;
-  justify-content: center;
 }
 
 .grid {
@@ -139,31 +139,44 @@ select {
 
 /* colors */
 
-.bg-dark-bold {
-  background-color: hsl(var(--crl-dark-bold));
-}
-.bg-dark {
-  background-color: hsl(var(--clr-dark));
+.bg-warning {
+  background-color: hsl(var(--clr-warning));
 }
 
 .bg-accent {
-  background-color: hsl(var(--clr-light));
+  background-color: hsl(var(--clr-accent));
+}
+
+.bg-dark {
+  background-color: hsl(var(--clr-dark));
 }
 
 .bg-white {
   background-color: hsl(var(--clr-white));
 }
 
+.bg-light {
+  background-color: hsl(var(--clr-light));
+}
+
+.text-warning {
+  color: hsl(var(--clr-warning));
+}
+
+.text-accent {
+  color: hsl(var(--clr-accent));
+}
+
 .text-dark {
   color: hsl(var(--clr-dark));
 }
 
-.text-accent {
-  color: hsl(var(--clr-light));
-}
-
 .text-white {
   color: hsl(var(--clr-white));
+}
+
+.text-light {
+  color: hsl(var(--clr-light));
 }
 
 /* typography  */
@@ -222,4 +235,16 @@ select {
 .fs-700,
 .fs-600 {
   line-height: 1.1;
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
 }

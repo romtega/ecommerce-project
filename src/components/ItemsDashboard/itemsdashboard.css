@@ -18,6 +18,8 @@
 
 .item-image {
   border-radius: 2rem;
+  height: 300px;
+  object-fit: cover;
 }
 
 .item-price {
