@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
-import UserIcon from "@/assets/usericon.svg";
-import KeyIcon from "@/assets/keyicon.svg";
+
 import "./loginform.css";
 
 const LoginForm = () => {
