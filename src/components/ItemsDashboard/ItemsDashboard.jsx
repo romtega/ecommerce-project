@@ -1,7 +1,10 @@
+import useItemsContext from "@/hooks/useItemsContext";
 import defaultImage from "@/assets/default-image.jpg";
 import "./itemsdashboard.css";
 
-const ItemsDashboard = ({ items, loading }) => {
+const ItemsDashboard = () => {
+  const { items, loading } = useItemsContext();
+
   const itemsWithImages = items.map((item) => ({
     ...item,
     image: item.image || defaultImage,

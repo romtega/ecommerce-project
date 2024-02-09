@@ -1,10 +1,13 @@
 import Home from "@/pages/Home/";
 import "./App.css";
+import { ItemsProvider } from "@/context/ItemsContext";
 
 function App() {
   return (
     <>
-      <Home />
+      <ItemsProvider>
+        <Home />
+      </ItemsProvider>
     </>
   );
 }
