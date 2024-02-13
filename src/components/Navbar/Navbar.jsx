@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
+import useItemsContext from "@/hooks/useItemsContext";
 import "./navbar.css";
 
 const Navbar = () => {
+  const { searchTerm, setSearchTerm } = useItemsContext();
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <div className="main-navbar flex flex-center container bg-accent text-white">
       <div className="main-navbar-brand uppercase letter-spacing-1 fs-500 fw-bold">
@@ -25,7 +32,12 @@ const Navbar = () => {
         </li>
         <li>
           <div className="main-navbar-search flex flex-center">
-            <input type="text" placeholder="Buscar..." />
+            <input
+              type="text"
+              placeholder="Buscar..."
+              value={searchTerm}
+              onChange={handleSearch}
+            />
             <button className="main-navbar-search-btn flex flex-center bg-light text-white">
               <ion-icon name="search-outline"></ion-icon>
             </button>

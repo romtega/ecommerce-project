@@ -4,12 +4,16 @@ import defaultImage from "@/assets/default-image.jpg";
 import "./itemsdashboard.css";
 
 const ItemsDashboard = () => {
-  const { items, loading, setItemSelected } = useItemsContext();
+  const { items, loading, setItemSelected, searchTerm } = useItemsContext();
 
   const itemsWithImages = items.map((item) => ({
     ...item,
     image: item.image || defaultImage,
   }));
+
+  const filteredItems = itemsWithImages.filter((item) => {
+    return item.product_name.toLowerCase().includes(searchTerm.toLowerCase());
+  });
 
   return (
     <div className="items-dashboard container">
@@ -20,7 +24,7 @@ const ItemsDashboard = () => {
         <p>Loading...</p>
       ) : (
         <div className="items-gallery grid">
-          {itemsWithImages.map((item) => (
+          {filteredItems.map((item) => (
             <div className="item-card grid grid-center" key={item.id}>
               <Link
                 to={`/itemdetails/${item.product_name}`}

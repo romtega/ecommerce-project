@@ -6,6 +6,7 @@ function ItemsProvider({ children }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [itemSelected, setItemSelected] = useState({});
+  const [searchTerm, setSearchTerm] = useState("");
 
   const BASE_URL = "https://ecommerce-json-jwt.onrender.com";
   const fetchItemsData = async () => {
@@ -19,11 +20,19 @@ function ItemsProvider({ children }) {
       setLoading(false);
     }
   };
+
   useEffect(() => {
     fetchItemsData();
   }, []);
 
-  const dataContext = { items, loading, itemSelected, setItemSelected };
+  const dataContext = {
+    items,
+    loading,
+    itemSelected,
+    setItemSelected,
+    searchTerm,
+    setSearchTerm,
+  };
 
   return (
     <ItemsContext.Provider value={dataContext}>
