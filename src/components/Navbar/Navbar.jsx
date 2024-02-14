@@ -16,9 +16,9 @@ const Navbar = () => {
       </div>
       <ul className="main-navbar-list flex flex-center">
         <li>
-          <a className="main-navbar-icon flex text-white" href="">
+          <Link to="/loginform" className="main-navbar-icon flex text-white">
             <ion-icon name="person-circle-outline"></ion-icon>
-          </a>
+          </Link>
         </li>
         <li>
           <a className="main-navbar-icon flex text-white" href="">

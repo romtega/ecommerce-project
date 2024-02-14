@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./signupform.css";
 
@@ -104,9 +105,9 @@ const SignupForm = () => {
         </div>
         <input className="signup-form__submit" type="submit" value="Guardar" />
       </form>
-      <a className="login-form__link" to="#">
+      <Link to="/loginform" className="login-form__link">
         Ya tienes cuenta?, por aqui por favor
-      </a>
+      </Link>
     </div>
   );
 };

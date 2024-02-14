@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-
 import "./loginform.css";
 
 const LoginForm = () => {
@@ -19,7 +19,7 @@ const LoginForm = () => {
       </div>
       <form className="login-form__form grid" onSubmit={handleSubmit(onSubmit)}>
         <div className="login-form__inputs flex flex-center">
-          <img src={UserIcon} alt="User Icon" className="login-form__icon" />
+          <ion-icon name="person"></ion-icon>{" "}
           <input
             className="login-form__input"
             type="text"
@@ -34,7 +34,7 @@ const LoginForm = () => {
           )}
         </div>
         <div className="login-form__inputs flex flex-center">
-          <img src={KeyIcon} alt="Password Icon" className="login-form__icon" />
+          <ion-icon name="key"></ion-icon>{" "}
           <input
             className="login-form__input"
             type="password"
@@ -54,9 +54,9 @@ const LoginForm = () => {
           value="Iniciar Sesión"
         />
       </form>
-      <a className="login-form__link" href="#">
+      <Link to="/signupform" className="login-form__link">
         No tienes cuenta? Registrate!
-      </a>
+      </Link>
     </div>
   );
 };
