@@ -6,6 +6,14 @@
   justify-content: space-between;
 }
 
+.main-navbar-brand > * {
+  transition: color 100ms ease-in-out;
+}
+
+.main-navbar-brand > *:hover {
+  color: hsl(var(--clr-light));
+}
+
 ul {
   list-style: none;
   justify-content: space-around;
@@ -13,33 +21,34 @@ ul {
 }
 
 .main-navbar-list {
-  --gap: 1.5rem;
+  --gap: 1.125rem;
   margin: 0.675rem 0;
 }
 
 .main-navbar-icon {
-  font-size: 2rem;
+  font-size: 1.65rem;
+  padding: 0.6rem;
+  transition: 300ms ease-in-out;
+  border-radius: 50%;
 }
 
 .main-navbar-icon:hover,
 .main-navbar-icon:focus {
-  color: hsl(var(--clr-warning));
+  background-color: hsl(var(--clr-light));
 }
 
 .main-navbar-search {
-  background-color: transparent;
-  transition: all 1s;
-  padding: 15px 30px;
-  margin-left: 0.6rem;
+  transition: all 300ms ease-in-out;
+  padding: 12px 24px;
   border-radius: 50px;
   position: relative;
-  border: 0.5px solid hsl(var(--clr-white));
+  border: 1px solid hsl(var(--clr-white));
 }
 
 .main-navbar-search:hover,
 .main-navbar-search:active {
-  background-color: hsl(var(--clr-white));
-  border: 1px solid hsl(var(--clr-accent));
+  background-color: hsl(var(--clr-gray));
+  border: 1px solid hsl(var(--clr-light));
 }
 
 .main-navbar-search input {
@@ -52,7 +61,7 @@ ul {
 .main-navbar-search input::placeholder {
   color: hsl(var(--clr-white));
   font-size: var(--fs-300);
-  transition: all 0.5s;
+  transition: all 300ms;
 }
 
 .main-navbar-search input:hover::placeholder {
@@ -65,15 +74,15 @@ ul {
   font-size: 1.5rem;
   border-radius: inherit;
   position: absolute;
-  right: 1px;
-  width: 50px;
-  height: 50px;
+  right: 0px;
+  width: 48px;
+  height: 48px;
   overflow: hidden;
-  transition: all 1s;
+  transition: all 300ms;
   justify-content: center;
 }
 
 .main-navbar-search-btn:hover,
 .main-navbar-search-btn:focus {
-  color: hsl(var(--clr-warning));
+  color: hsl(var(--clr-white));
 }

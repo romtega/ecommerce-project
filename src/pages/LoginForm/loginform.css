@@ -1,28 +1,24 @@
 .login-form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  transform: translate(-50%, -50%);
   gap: 2rem;
-  padding: 2rem;
+  padding: 2rem 1rem;
   border-radius: 15px;
+  max-width: 400px;
+  margin: 8rem auto;
+  border: 1px solid hsl(var(--clr-accent));
+}
+
+.login-form__header {
+  border-bottom: 1px solid hsl(var(--clr-accent));
+  width: 100%;
 }
 
 .login-form__title {
-  color: hsl(var(--clr-dark));
-  font-size: var(--fs-700);
-  margin-bottom: -15px;
-}
-
-.login-form__underline {
-  width: 75%;
-  height: 3px;
-  background: hsl(var(--clr-dark));
+  color: hsl(var(--clr-warning));
 }
 
 .login-form__form {
-  margin: 20px 0;
+  padding: 2rem;
+  width: 100%;
 }
 
 .login-form__icon {
@@ -33,12 +29,14 @@
 .login-form__input {
   height: 2.6rem;
   border: 2px solid hsl(var(--clr-white));
+  width: 100%;
+  border-radius: 8px;
 }
 
 .login-form__submit,
 .login-form__submit:link,
 .login-form__submit:visited {
-  background-color: hsl(var(--clr-dark));
+  background-color: hsl(var(--clr-warning));
   color: hsl(var(--clr-white));
   padding: 0.4rem 0.8rem;
   border: none;
@@ -50,7 +48,7 @@
 
 .login-form__link:link,
 .login-form__link:visited {
-  color: hsl(var(--clr-dark));
+  color: hsl(var(--clr-warning));
   text-decoration: none;
   transition: all 0.3s;
 }

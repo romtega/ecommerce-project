@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import useItemsContext from "@/hooks/useItemsContext";
 import "./navbar.css";
 
@@ -10,25 +10,28 @@ const Navbar = () => {
   };
 
   return (
-    <div className="main-navbar flex flex-center container bg-accent text-white">
+    <div className="main-navbar container flex flex-center  bg-accent text-white">
       <div className="main-navbar-brand uppercase letter-spacing-1 fs-500 fw-bold">
-        <Link to="/">ikomers</Link>
+        <NavLink to="/">ikomers</NavLink>
       </div>
       <ul className="main-navbar-list flex flex-center">
         <li>
-          <Link to="/loginform" className="main-navbar-icon flex text-white">
+          <NavLink to="/loginform" className="main-navbar-icon flex text-white">
             <ion-icon name="person-circle-outline"></ion-icon>
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <a className="main-navbar-icon flex text-white" href="">
+          <NavLink
+            to="/shoppingcart"
+            className="main-navbar-icon flex text-white"
+          >
             <ion-icon name="cart-outline"></ion-icon>
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a className="main-navbar-icon flex text-white" href="">
+          <NavLink to="/wishlist" className="main-navbar-icon flex text-white">
             <ion-icon name="heart-outline"></ion-icon>
-          </a>
+          </NavLink>
         </li>
         <li>
           <div className="main-navbar-search flex flex-center">

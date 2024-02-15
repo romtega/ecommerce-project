@@ -12,20 +12,23 @@ const ItemsDashboard = () => {
   }));
 
   const filteredItems = itemsWithImages.filter((item) => {
-    return item.product_name.toLowerCase().includes(searchTerm.toLowerCase());
+    return (
+      item.product_name &&
+      item.product_name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
   });
 
   return (
-    <div className="items-dashboard container">
-      <h2 className="items-dashboard-title uppercase">
-        Tenemos lo que necesitas ☺️
+    <div className="items-dashboard">
+      <h2 className="items-dashboard-title ff-serif uppercase letter-spacing-3">
+        nuestros productos
       </h2>
       {loading ? (
         <p>Loading...</p>
       ) : (
         <div className="items-gallery grid">
           {filteredItems.map((item) => (
-            <div className="item-card grid grid-center" key={item.id}>
+            <div className="item-card" key={item.id}>
               <Link
                 to={`/itemdetails/${item.product_name}`}
                 className="item-link"
@@ -41,7 +44,7 @@ const ItemsDashboard = () => {
                   <h5 className="item-brand uppercase ff-serif">
                     {item.brand}
                   </h5>
-                  <p className="item-price fs-400 letter-spacing-3 ">
+                  <p className="item-price fs-400 letter-spacing-3 bg-light">
                     <span>$</span>
                     {item.price}
                   </p>

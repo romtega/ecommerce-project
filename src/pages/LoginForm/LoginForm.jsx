@@ -12,9 +12,9 @@ const LoginForm = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className="login-form grid grid-center bg-accent">
+    <div className="login-form grid grid-center">
       <div className="login-form__header grid grid-center">
-        <h2 className="login-form__title">Bienvenido!</h2>
+        <h2 className="login-form__title fs-700">Bienvenido!</h2>
         <div className="login-form__underline"></div>
       </div>
       <form className="login-form__form grid" onSubmit={handleSubmit(onSubmit)}>

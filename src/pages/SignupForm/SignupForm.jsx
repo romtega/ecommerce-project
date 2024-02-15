@@ -26,17 +26,17 @@ const SignupForm = () => {
   };
 
   return (
-    <div className="signup-form grid grid-center bg-accent">
+    <div className="signup-form grid grid-center">
       <div className="signup-form__header grid grid-center">
-        <div className="signup-form__title">Registrate</div>
+        <div className="signup-form__title fs-700">Registrate</div>
         <div className="signup-form__underline"></div>
       </div>
       <form
-        className="signup-form__form grid"
+        className="signup-form__form grid grid-center"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="signup-form__inputs flex flex-center">
-          <label htmlFor="first_name">Nombre</label>
+          <label htmlFor="first_name">Nombre:</label>
           <input
             className="signup-form__input"
             type="text"
@@ -48,7 +48,7 @@ const SignupForm = () => {
           />
         </div>
         <div className="signup-form__inputs flex flex-center">
-          <label htmlFor="last_name">Apellidos</label>
+          <label htmlFor="last_name">Apellidos:</label>
           <input
             className="signup-form__input"
             type="text"
@@ -60,7 +60,7 @@ const SignupForm = () => {
           />
         </div>
         <div className="signup-form__inputs flex flex-center">
-          <label htmlFor="gender">Genero</label>
+          <label htmlFor="gender">Genero:</label>
           <select
             className="signup-form__input"
             id="gender"
@@ -74,7 +74,7 @@ const SignupForm = () => {
           </select>
         </div>
         <div className="signup-form__inputs flex flex-center">
-          <label htmlFor="email">Correo</label>
+          <label htmlFor="email">Correo:</label>
           <input
             className="signup-form__input"
             type="email"
@@ -90,7 +90,7 @@ const SignupForm = () => {
           />
         </div>
         <div className="signup-form__inputs flex flex-center">
-          <label htmlFor="password">Contraseña</label>
+          <label htmlFor="password">Contraseña:</label>
           <input
             className="signup-form__input"
             type="password"
@@ -103,8 +103,8 @@ const SignupForm = () => {
         </div>
         <input className="signup-form__submit" type="submit" value="Guardar" />
       </form>
-      <Link to="/loginform" className="login-form__link">
-        Ya tienes cuenta?, por aqui por favor
+      <Link to="/loginform" className="signup-form__link">
+        Ya tienes cuenta?
       </Link>
     </div>
   );
