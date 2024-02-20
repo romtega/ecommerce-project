@@ -1,10 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { loginUserServices } from "@/services/useServices";
+import useAuthContext from "@/hooks/useAuthContext";
 
 import "./loginform.css";
 
 const LoginForm = () => {
+  const { login } = useAuthContext();
   const navigate = useNavigate();
   const {
     register,
@@ -19,6 +21,7 @@ const LoginForm = () => {
       console.log("Response from server:", response);
       console.log("Response status:", response.status);
       if (response.status === 200) {
+        login(response.data.token);
         navigate("/");
         alert("Bienvenido!");
       }
