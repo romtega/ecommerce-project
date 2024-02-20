@@ -19,6 +19,7 @@ const SignupForm = () => {
       console.log("Response status:", response.status);
       if (response.status === 201) {
         navigate("/loginform");
+        alert("Te registraste satisfactoriamente!, Ingresa a tu cuenta");
       }
     } catch (error) {
       console.error("Error registering user:", error.message);
@@ -46,6 +47,9 @@ const SignupForm = () => {
               required: "No me ignores! 🥲",
             })}
           />
+          {errors.first_name && (
+            <p className="login-form__error">{errors.first_name.message}</p>
+          )}
         </div>
         <div className="signup-form__inputs flex flex-center">
           <label htmlFor="last_name">Apellidos:</label>
@@ -58,6 +62,9 @@ const SignupForm = () => {
               required: "No me ignores! 🥲",
             })}
           />
+          {errors.last_name && (
+            <p className="login-form__error">{errors.last_name.message}</p>
+          )}
         </div>
         <div className="signup-form__inputs flex flex-center">
           <label htmlFor="gender">Genero:</label>
@@ -88,6 +95,9 @@ const SignupForm = () => {
               },
             })}
           />
+          {errors.email && (
+            <p className="login-form__error">{errors.email.message}</p>
+          )}
         </div>
         <div className="signup-form__inputs flex flex-center">
           <label htmlFor="password">Contraseña:</label>
@@ -100,6 +110,9 @@ const SignupForm = () => {
               required: "Please enter your password",
             })}
           />
+          {errors.password && (
+            <p className="login-form__error">{errors.password.message}</p>
+          )}
         </div>
         <input className="signup-form__submit" type="submit" value="Guardar" />
       </form>

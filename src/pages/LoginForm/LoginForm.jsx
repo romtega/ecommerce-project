@@ -1,16 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { loginUserServices } from "@/services/useServices";
+
 import "./loginform.css";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
-
+  const onSubmit = async (data) => {
+    console.log("Submitting form data:", data);
+    try {
+      const response = await loginUserServices(data);
+      console.log("Response from server:", response);
+      console.log("Response status:", response.status);
+      if (response.status === 200) {
+        navigate("/");
+        alert("Bienvenido!");
+      }
+    } catch (error) {
+      console.error("Error registering user:", error.message);
+    }
+  };
   return (
     <div className="login-form grid grid-center">
       <div className="login-form__header grid grid-center">
@@ -23,14 +38,14 @@ const LoginForm = () => {
           <input
             className="login-form__input"
             type="text"
-            id="username"
+            id="email"
             placeholder="Ingresa tu usuario"
-            {...register("username", {
+            {...register("email", {
               required: "Ingresa un usuario valido",
             })}
           />
-          {errors.username && (
-            <p className="login-form__error">{errors.username.message}</p>
+          {errors.email && (
+            <p className="login-form__error">{errors.email.message}</p>
           )}
         </div>
         <div className="login-form__inputs flex flex-center">
