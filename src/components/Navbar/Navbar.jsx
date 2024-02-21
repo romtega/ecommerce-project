@@ -1,12 +1,10 @@
 import { NavLink } from "react-router-dom";
 import useItemsContext from "@/hooks/useItemsContext";
-import { AuthContext } from "@/context/AuthContext";
 import "./navbar.css";
-import useAuthContext from "../../hooks/useAuthContext";
+import useAuthContext from "@/hooks/useAuthContext";
 
 const Navbar = () => {
-  const { isAuth, logout } = useAuthContext();
-
+  const { isAuth, logout, userPayLoad } = useAuthContext();
   const { searchTerm, setSearchTerm } = useItemsContext();
 
   const handleSearch = (e) => {
@@ -19,6 +17,15 @@ const Navbar = () => {
         <NavLink to="/">ikomers</NavLink>
       </div>
       <ul className="main-navbar-list flex flex-center">
+        {isAuth ? (
+          <li>
+            {userPayLoad?.role === "ADMIN" ? (
+              <p className="uppercase bg-warning">ADMIN</p>
+            ) : (
+              <p className="uppercase ff-serif fw-bold">CUSTOMER</p>
+            )}
+          </li>
+        ) : null}
         <li>
           <NavLink
             to="/shoppingcart"
